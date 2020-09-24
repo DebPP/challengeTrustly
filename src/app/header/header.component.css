@@ -1,15 +1,36 @@
 .header-content {
-    background-color: #F1F1F1;
+    background-color: #f1f1f1;
     height: 5rem;
     width: 100%;
     padding: 1rem 3rem;
 }
 
-.header-title { 
+.header-title {
     font-size: 26.1038px;
-}   
+}
 
-.header-avatar{
-    width: 34,81px;
+.text-back {
+    font-weight: 500;
+}
+
+.header-back {
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 17.4025px;
+    padding: 0.35rem;
+    width: 5rem;
+    text-align: center;
+    border: none;
+    height: 1.5rem;
+    padding-top: 3px;
+}
+
+.header-avatar {
+    width: 34, 81px;
     height: 35px;
+}
+
+@media only screen and (max-width: 768px) {
+    .header-content {
+        background-color: white;
+    }
 }
