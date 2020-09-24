@@ -12,8 +12,7 @@ export class HeaderComponent implements OnInit {
   route;
   constructor(
     private activeRoute: ActivatedRoute) {
-    this.route = this.activeRoute.snapshot.url
-    console.log(this.route)
+   
     
  
   }
