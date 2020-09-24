@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -8,15 +6,12 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class HeaderComponent implements OnInit {
 
-  showBack: boolean = false;
-  route;
-  constructor(
-    private activeRoute: ActivatedRoute) {
-   
-    
- 
-  }
+  constructor(){}
+  
   ngOnInit(): void {
   }
 
+  goBack(){
+    window.history.back()
+  }
 }

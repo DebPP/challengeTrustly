@@ -32,8 +32,8 @@ body {
         width: 100%;
         padding: 0;
     }
-    .teste{
-        justify-content: space-around;
+    .content{
+        justify-content: space-around !important;
     }
     .header-content{
         background-color: white;

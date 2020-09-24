@@ -4,7 +4,7 @@
         <input matInput #search placeholder="Search for you sneaker" value="" 
         (keyup)="this.getProducts(search.value)">
     </mat-form-field>
-    <div class="d-flex teste flex-wrap">
+    <div class="d-flex content flex-wrap">
         <div class="store-products" *ngFor="let product of this.products.results">
             <img [src]='product.thumbnailURL' class="image-product" alt="">
             <div class="name-product"> {{product.description}} </div>
