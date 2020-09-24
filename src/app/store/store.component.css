@@ -1,0 +1,56 @@
+
+.product {
+    background-color: aquamarine;
+}
+
+.store-products {
+    background-color: #ffffff;
+    box-shadow: 0px 6px 16px rgba(0, 0, 0, 0.05);
+    height: 373px;
+    width: 297.32px;
+    margin: 1.2rem;
+}
+
+.image-product {
+    border-radius: 4.50483px;
+}
+
+.name-product {
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 17.64px;
+    text-align: center;
+    margin: 20px;
+    font-family: 'Open Sans' sans-serif;
+}
+
+.infos {
+    padding: 1rem;
+}
+
+.infos mat-form-field {
+    width: 69.37px;
+    height: 27.93px;
+    border: 0.900966px solid #e8e8e8;
+    border-radius: 25.2271px;
+    padding: 0 6px;
+}
+
+.mat-select-value {
+    color: #8D8D8D !important;
+}
+
+.infos mat-form-field::ng-deep .mat-form-field-infix  {
+   border-top: 0 !important;
+}
+
+.infos-price {
+    font-family: 'Open Sans' sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 21px;
+    line-height: 18px;
+    text-align: center;
+    color: #000000;
+    margin: 20px;
+}

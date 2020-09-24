@@ -1,0 +1,41 @@
+<div class="store-content">
+    <mat-form-field class="example-full-width w-100">
+
+        <input matInput #search placeholder="Search for you sneaker" value="" 
+        (keyup)="this.getProducts(search.value)">
+    </mat-form-field>
+    <div class="d-flex justify-content-between flex-wrap">
+        <div class="store-products" *ngFor="let product of this.products.results">
+            <img [src]='product.thumbnailURL' class="image-product" alt="">
+            <div class="name-product"> {{product.description}} </div>
+            <div class="infos">
+                <div class="d-flex justify-content-between">
+                    <div class="d-flex align-items-center">
+                        <div class="infos-text">Size</div>
+                        <mat-form-field appearance="none">
+                            <mat-select [(ngModel)]="selectedSize" (ngModelChange)="onChange($event)">
+                                <mat-option>None</mat-option>
+                                <mat-option *ngFor="let size of this.setSizes()" [value]="size">{{size}}</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <div class="infos-text">Quantity</div>
+                        <mat-form-field appearance="none">
+                            <mat-select>
+                                <mat-option>None</mat-option>
+                                <mat-option *ngFor="let quantity of this.setQuantitys()" [value]="quantity">{{quantity}}
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="infos-price">{{product.price | currency}}</div>
+                <button routerLink="/checkout/{{product.id}}" [queryParams]="{size: 5.5, quantity: 1}" 
+                class="btn btn-primay btn-cart w-100" type="button">Add to cart</button>
+            </div>
+
+        </div>
+    </div>
+
+</div>

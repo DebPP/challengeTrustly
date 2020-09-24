@@ -1,0 +1,15 @@
+.header-content {
+    background-color: #F1F1F1;
+    height: 5rem;
+    width: 100%;
+    padding: 1rem 3rem;
+}
+
+.header-title { 
+    font-size: 26.1038px;
+}   
+
+.header-avatar{
+    width: 34,81px;
+    height: 35px;
+}
