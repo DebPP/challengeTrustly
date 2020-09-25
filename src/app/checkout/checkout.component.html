@@ -1,54 +1,84 @@
+<!-- <script src="./../../assets/js/create_transaction.js" type="text/javascript"></script>  -->
 <div class="store-content ">
-    <div class="store-products row w-100" *ngFor="let product of this.products.results">
-        <div class="col-md-5">
-            <img [src]='product.maxresURL' class="image-product" alt="">
-        </div>
+ 
+  <div>
+    <mat-horizontal-stepper [linear]="false" #stepper labelPosition="bottom" selectedIndex="1">
+      <mat-step [stepControl]="firstFormGroup" label="Cart" completed>
+        <form [formGroup]="firstFormGroup">
 
-        <div class="infos col-md-7">
-            <div class="row">
-                <div class="col-md-6">
-                    <h3>Cart total</h3>
-                    <div>{{product.description}}</div>
-                    <div class="infos-text">x {{this.quantity}} {{product.color}} {{this.size}}</div>
-                    <div class="infos-text">Item #{{product.id}} </div>
-                </div>
-                <div class="col-md-6">
-                    <h3>Delivery details</h3>
-                    <div class="infos-text">John Smith</div>
-                    <div class="infos-text">Phone no: 01312428200</div>
-                    <div class="infos-text">Address: Reddwood City, 2000</div>
-                    <div class="d-flex mt-2 align-items-center">
-                        <div>
-                            <div>Total cost</div>
-                            <div class="infos-text">Delivery inclued</div>
-                        </div>
-                        <div class="product-price">
-                            {{product.price | currency }}
-                        </div>
-                    </div>
-                </div>
+        </form>
+      </mat-step>
+      <mat-step [stepControl]="secondFormGroup" label="Payment options" completed>
+        <form [formGroup]="secondFormGroup">
+
+          <div class="store-products" *ngFor="let product of this.products.results">
+            <div class="store-image">
+              <img [src]='product.maxresURL' class="image-product" alt="">
             </div>
-            
-            <div class="mt-2 payments">
+
+            <div class="infos d-flex justify-content-between flex-column">
+              <div class="d-flex justify-content-between">
+                <div class="w-50 justify-content-end">
+                  <h3>Cart total</h3>
+                  <div>{{product.description}}</div>
+                  <div class="infos-text">x {{this.quantity}} {{product.color}} {{this.size}}</div>
+                  <div class="infos-text">Item #{{product.id}} </div>
+                </div>
+                <div class="w-50">
+                  <h3>Delivery details</h3>
+                  <div class="infos-text">John Smith</div>
+                  <div class="infos-text">Phone no: 01312428200</div>
+                  <div class="infos-text">Address: Reddwood City, 2000</div>
+                </div>
+              </div>
+              <div class="d-flex mt-2 align-items-center justify-content-end">
+                <div>
+                  <div>Total cost</div>
+                  <div class="infos-text">Delivery inclued</div>
+                </div>
+                <div class="product-price">
+                  {{product.price | currency }}
+                </div>
+              </div>
+
+
+
+              <div class="mt-2 payments">
                 <h3> Select your payment method </h3>
-                <div class="card-payment online-banking mb-3 border border-success">
-                    <span class="save">SAVE $10</span>
-                    <div class="infos-text">Online Banking</div>
-                    <img class="img-payment" src="../../assets/img/banner.png">
+                <div type="checkbox" class="card-payment online-banking mb-3 border border-success">
+                  <span class="save">SAVE $10</span>
+                  <div class="infos-text">Online Banking</div>
+                  <img class="img-payment" src="../../assets/img/banner.png">
                 </div>
                 <div class="card-payment card-payment mb-3">
-                    <div class="infos-text">Card payment</div>
-                    <div><img class="img-payment-cards" src="../../assets/img/cards.png"></div>
+                  <div class="infos-text">Card payment</div>
+                  <div><img class="img-payment-cards" src="../../assets/img/cards.png"></div>
                 </div>
                 <div class="card-payment apple-pay">
-                    <div class="infos-text">Apple Pay</div>
-                    <img class="img-payment-apple" src="../../assets/img/apple.png">
+                  <div class="infos-text">Apple Pay</div>
+                  <img class="img-payment-apple" src="../../assets/img/apple.png">
                 </div>
-            </div>
+              </div>
 
-            <div class="mt-3 d-flex justify-content-end">
-                <button class="btn btn-primay btn-cart w-50" type="button">Continue</button>
+              <div class="mt-3 d-flex justify-content-end">
+                <button class="btn btn-primay btn-cart w-50" (click)="this.addJsToComponent('./../../assets/js/create_transaction.js');"
+                  type="button">Continue</button>
+              </div>
             </div>
-        </div>
-    </div>
+          </div>
+          <!--           
+            <div>
+              <button mat-button matStepperPrevious>Back</button>
+              <button mat-button matStepperNext>Next</button>
+            </div> -->
+        </form>
+      </mat-step>
+      <mat-step>
+        <ng-template matStepLabel>Receipt</ng-template>
+        <app-review></app-review>
+     
+      </mat-step>
+    </mat-horizontal-stepper>
+  </div>
+
 </div>

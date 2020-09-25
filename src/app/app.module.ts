@@ -12,12 +12,16 @@ import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import {MatSelectModule} from '@angular/material/select';
 import { CheckoutComponent } from './checkout/checkout.component';
+import {MatStepperModule} from '@angular/material/stepper';
+import { ReactiveFormsModule } from '@angular/forms';
+import { ReviewComponent } from './review/review.component';
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     StoreComponent,
-    CheckoutComponent
+    CheckoutComponent,
+    ReviewComponent
   ],
   imports: [
     CommonModule,
@@ -28,7 +32,9 @@ import { CheckoutComponent } from './checkout/checkout.component';
     HttpClientModule,
     MatFormFieldModule,
     MatInputModule,
-    MatSelectModule
+    MatSelectModule,
+    MatStepperModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent],

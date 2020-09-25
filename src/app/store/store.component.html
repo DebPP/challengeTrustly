@@ -13,7 +13,7 @@
                     <div class="d-flex align-items-center">
                         <div class="infos-text">Size</div>
                         <mat-form-field appearance="none">
-                            <mat-select [(ngModel)]="selectedSize" (ngModelChange)="onChange($event)">
+                            <mat-select>
                                 <mat-option>None</mat-option>
                                 <mat-option *ngFor="let size of this.setSizes()" [value]="size">{{size}}</mat-option>
                             </mat-select>

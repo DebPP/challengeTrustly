@@ -1,0 +1,40 @@
+
+    <div class="store-products" *ngFor="let product of this.products.results">
+        <div class="store-image">
+            <img [src]='product.maxresURL' class="image-product" alt="">
+        </div>
+
+        <div class="infos d-flex flex-column">
+            <div class="d-flex justify-content-between">
+                <div class="w-50 justify-content-end">
+                    <h3>Cart total</h3>
+                    <div>{{product.description}}</div>
+                    <div class="infos-text">x {{this.quantity}} {{product.color}} {{this.size}}</div>
+                    <div class="infos-text">Item #{{product.id}} </div>
+                </div>
+                <div class="w-50">
+                    <h3>Payment Method</h3>
+                    <div class="d-flex align-items-center">
+                        <div> <img src="../../assets/img/green-bank-icon 1.png"></div>
+                        <div>Online Banking</div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="d-flex mt-5 align-items-center justify-content-between w-100">
+                <div>
+                    <div>Total cost</div>
+                    <div class="infos-text">Delivery inclued</div>
+                </div>
+                <div class="product-price">
+                    {{product.price | currency }}
+                </div>
+                <div class="w-50">
+                    <button class="btn btn-primay btn-cart w-100" type="button">Place order</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
