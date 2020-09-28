@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit, Renderer2 } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 @Component({
   selector: 'app-checkout',
   templateUrl: './checkout.component.html',
@@ -14,11 +14,13 @@ export class CheckoutComponent implements OnInit {
   quantity: any;
   firstFormGroup: FormGroup;
   secondFormGroup: FormGroup;
-
+  titulo: string = "Checkout";
+  review : string = "Review and Confirmation"
   constructor(private httpClient: HttpClient,
     private activeRoute: ActivatedRoute,
     private _formBuilder: FormBuilder,
-    private renderer: Renderer2) {
+    private renderer: Renderer2,
+    private router: Router) {
 
     this.id = this.activeRoute.snapshot.paramMap.get('id');
     this.size = this.activeRoute.snapshot.queryParamMap.get('size');
@@ -27,6 +29,7 @@ export class CheckoutComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    
     this.getProduct(this.id);
     this.firstFormGroup = this._formBuilder.group({
       firstCtrl: ['', Validators.required]
@@ -34,6 +37,16 @@ export class CheckoutComponent implements OnInit {
     this.secondFormGroup = this._formBuilder.group({
       secondCtrl: ['', Validators.required]
     });
+    this.verificaRota();
+  }
+
+  verificaRota(){
+    if(this.router.url.includes('checkout')){
+      this.titulo = "Checkout"
+    }
+    if(this.router.url.includes('rewiew')){
+      this.titulo = "Review and Confirmation"
+    }
   }
   
   addJsToComponent(src: string): HTMLScriptElement {

@@ -13,6 +13,7 @@ export class ReviewComponent implements OnInit {
   id: any;
   size: any;
   quantity: any;
+  titulo: string = "Review and Confirmation";
 
   constructor(private httpClient: HttpClient,
     private activeRoute: ActivatedRoute,

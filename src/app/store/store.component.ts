@@ -11,20 +11,17 @@ export class StoreComponent implements OnInit {
   sizes: any = [];
   quantitys: any = [];
   product : string = ""
-  quantity;
-  size;
   selectedSize;
+  selectedValue;
+  titulo: string = "Sneakers"
+
   constructor(private httpClient: HttpClient) { }
 
   ngOnInit() {
     this.getProducts('');
     this.setSizes();
     this.setQuantitys();
-  }
-
-  onChange(newValue) {
-    console.log(newValue);
-    this.selectedSize = newValue;
+    
   }
 
   getProducts(product) {
@@ -41,7 +38,7 @@ export class StoreComponent implements OnInit {
         
       })
   }
-
+  
   setSizes() {
     return this.sizes = [3.5, 4, 4.5, 5, 5.5, 6, 6.5, 7, 7.5, 8, 8.5, 9, 10.5]
   }

@@ -13,7 +13,7 @@ import { CommonModule } from '@angular/common';
 import {MatSelectModule} from '@angular/material/select';
 import { CheckoutComponent } from './checkout/checkout.component';
 import {MatStepperModule} from '@angular/material/stepper';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ReviewComponent } from './review/review.component';
 @NgModule({
   declarations: [
@@ -28,6 +28,7 @@ import { ReviewComponent } from './review/review.component';
     BrowserModule,
     AppRoutingModule,
     AppRoutingModule,
+    FormsModule,
     BrowserAnimationsModule,
     HttpClientModule,
     MatFormFieldModule,
