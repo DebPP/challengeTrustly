@@ -9,6 +9,13 @@
     height: 78vh;
     width: 100%;
     padding: 2rem;
+    display: flex; 
+    flex-direction: column
+}
+
+.infos-content{
+    display: flex;
+    justify-content: space-between;
 }
 
 h3 {
@@ -32,10 +39,12 @@ h3 {
 }
 
 @media only screen and (max-width: 768px) {
-    .infos {
+    .btn-cart {
     }
 
-    .store-products {
+    .infos-content {
+        flex-direction: column;
+        align-items: flex-end;
     }
 
     .store-image {
